@@ -58,7 +58,7 @@ docker run -d -p 7777:8080 --env-file .env --name qrcode-generator qrcode-genera
 
 Após o contêiner estar rodando, você pode testar a API de geração de QR Code. Para isso, envie uma **requisição POST** para o seguinte endpoint:
 
-```http
+```bash
 POST http://[sua_url]:7777/api/qrcode/generate
 ```
 
