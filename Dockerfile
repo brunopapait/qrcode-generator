@@ -1,4 +1,4 @@
-FROM maven:3.9.6-eclipse-temurin-24
+FROM maven:3.9.9-eclipse-temurin-24 AS build
 LABEL authors="BRUNOPAPAIT"
 
 WORKDIR /app
@@ -16,4 +16,4 @@ ARG AWS_SECRET_ACCESS_KEY
 ENV AWS_REGION=us-east-1
 ENV AWS_BUCKET_NAME=qrcode-storagebp
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar", "--spring.profiles.active=prod"]
